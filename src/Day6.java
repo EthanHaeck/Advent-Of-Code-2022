@@ -16,25 +16,29 @@ public class Day6 {
 
         char[] chars = input.toCharArray();
 
-        char[] recent = new char[4];
+        //pt 1 - 4 chars
+        //pt 2 - 14 chars
+        int part2 = 14;
+
+        char[] recent = new char[part2];
         for(int i = 0; i < chars.length; i++){
-            recent[0] = chars[i];
-            recent[1] = chars[i+1];
-            recent[2] = chars[i+2];
-            recent[3] = chars[i+3];
+
+            //fill recent
+            for(int a = 0; a < part2; a++){
+                recent[a] = chars[a+i];
+            }
 
            Set<Character> unique = new HashSet<Character>();
-           for(int j = 0; j < 4; j++){
+           for(int j = 0; j < part2; j++){
                if(unique.add(recent[j])){
                     check++;
                }
            }
-           if(check == 4){
-               System.out.println(i+3);
+           if(check == part2){
+               System.out.println(i+part2);
                System.exit(0);
            }
            check = 0;
         }
-
     }
 }
