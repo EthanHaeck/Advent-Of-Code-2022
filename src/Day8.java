@@ -15,7 +15,6 @@ public class Day8 {
         int largestScenicScore = 0;
 
         //calculate number on the exterior
-
         String firstLine = scanner.nextLine();
         //width & height
         int width = firstLine.toCharArray().length;
